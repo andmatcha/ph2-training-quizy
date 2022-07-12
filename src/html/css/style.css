@@ -1,0 +1,52 @@
+body {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+.content {
+  margin: 0 auto;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.content__title {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.quiz {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.quiz__title {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.quiz__img-box {
+  width: 100%;
+}
+.quiz__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.quiz__choices {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.quiz__choice {
+  border: 1px solid #adadad;
+  border-radius: 4px;
+  padding: 12px;
+  color: #333333;
+  font-size: 1.2rem;
+  font-weight: 400;
+  cursor: pointer;
+}
