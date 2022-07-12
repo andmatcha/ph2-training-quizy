@@ -1,8 +1,13 @@
-DROP DATABASE IF EXISTS webapp;
+USE mysql;
 
-CREATE DATABASE webapp;
+ALTER user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+ALTER user 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
 
-USE webapp;
+DROP DATABASE IF EXISTS quiz;
+
+CREATE DATABASE quiz;
+
+USE quiz;
 
 DROP TABLE IF EXISTS big_questions;
 

@@ -28,5 +28,5 @@ services:
       - ./mysql/initdb.d:/docker-entrypoint-initdb.d
       - ./mysql/my.conf:/etc/mysql/conf.d
     environment:
-      MYSQL_DATABASE: webapp
+      MYSQL_DATABASE: quiz
       MYSQL_ROOT_PASSWORD: password
