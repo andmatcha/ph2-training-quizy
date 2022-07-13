@@ -41,21 +41,23 @@ require(dirname(__FILE__, 2) . '/app/get-quiz.php');
                 <div class="quiz__img-box">
                     <img class="quiz__img" src="<?= $_SERVER['HTTP_SERVER'] . '/images/' . $question['image'] ?>" alt="">
                 </div>
-                <ul class="quiz__choices">
+                <ul class="quiz__choices js-choices<?= $question_index ?>">
 
-                    <?php foreach ($choices[$question_index] as $choice) : ?>
-                        <li class="quiz__choice"><?= $choice['name'] ?></li>
+                    <?php foreach ($choices[$question_index] as $choice_index => $choice) : ?>
+                        <li class="quiz__choice" id="choice<?= $question_index ?>_<?= $choice_index ?>" onclick="clickFn(<?= $question_index ?>, <?= $choice_index ?>, <?= $choice['valid'] ?>)"><?= $choice['name'] ?></li>
                     <?php endforeach; ?>
 
                 </ul>
                 <div class="quiz__comment-box">
-                    <h3 class="quiz__comment-title"></h3>
-                    <p class="quiz__comment-text"></p>
+                    <h3 class="quiz__comment-title" id="comment_title<?= $question_index ?>"></h3>
+                    <p class="quiz__comment-text" id="comment_text<?= $question_index ?>"></p>
                 </div>
             </div>
         <?php endforeach; ?>
 
     </div>
+
+    <script src="./js/quiz.js"></script>
 </body>
 
 </html>
