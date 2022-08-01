@@ -24,30 +24,33 @@ require(dirname(__FILE__, 2) . '/app/get-quiz.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
-    <link rel="stylesheet" href="<?= $_SERVER['HTTP_SERVER'] . '/resources/css/quizy/reset.css' ?>">
-    <link rel="stylesheet" href="<?= $_SERVER['HTTP_SERVER'] . '/resources/css/quizy/reset.css' ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<?= $_SERVER['HTTP_SERVER'] . '/css/destyle.css' ?>">
+    <link rel="stylesheet" href="<?= $_SERVER['HTTP_SERVER'] . '/css/style.css' ?>">
 </head>
 
 <body>
-    <div class="wrapper">
-        <h1><?= $title ?></h1>
+    <div class="content">
+        <h1 class="content__title"><?= $title ?></h1>
 
         <?php foreach ($questions as $question_index => $question) : ?>
-            <div class="quiz_box">
-                <h2 class="quiz_box__title"><?= $question_index + 1 ?>. この地名なんて読む？</h2>
-                <div class="quiz_box__image">
-                    <img src="<?= $_SERVER['HTTP_SERVER'] . '/images/' . $question['image'] ?>">
+            <div class="quiz">
+                <h2 class="quiz__title"><?= $question_index + 1 ?>. この地名なんて読む？</h2>
+                <div class="quiz__img-box">
+                    <img class="quiz__img" src="<?= $_SERVER['HTTP_SERVER'] . '/images/' . $question['image'] ?>" alt="">
                 </div>
-                <ul class="quiz_box__choices">
+                <ul class="quiz__choices">
 
                     <?php foreach ($choices[$question_index] as $choice) : ?>
-                        <li class="quiz_box__choices__item"><?= $choice['name'] ?></li>
+                        <li class="quiz__choice"><?= $choice['name'] ?></li>
                     <?php endforeach; ?>
 
                 </ul>
-                <div class="quiz_box__comment">
-                    <h3 class="quiz_box__comment__title"></h3>
-                    <p class="quiz_box__comment__text"></p>
+                <div class="quiz__comment-box">
+                    <h3 class="quiz__comment-title"></h3>
+                    <p class="quiz__comment-text"></p>
                 </div>
             </div>
         <?php endforeach; ?>
